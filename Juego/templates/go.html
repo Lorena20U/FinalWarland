@@ -1,0 +1,58 @@
+{% extends "layout.html" %} 
+{% block tit %} Go {% endblock %} 
+{% block enc %} Go {% endblock %}
+
+{% block contenido%}
+
+<div class="container-xl">
+  <div class="card-body">
+    <h5>Reglas</h5>
+    <p class="card-text">El objetivo básico del juego es utilizar las piedras propias para formar territorio rodeando regiones vacias del tablero.    </p>
+    <p>Gana quien alcanza la máxima puntuación, que básicamente se corresponde con el control de un mayor territorio.
+    </p>
+    <p>Inicialmente el tablero está vacío. Comienza el jugador con piedras negras, y seguidamente el turno va cambiándose entre uno y otro alternativamente.
+    </p>
+    <p>Cada movimiento consiste en colocar una nueva piedra en una intersección libre del tablero de juego, nunca en mover las piedras ya colocadas en éste.
+    </p>
+    <p>La partida finaliza mediante un acuerdo entre ambos jugadores. 
+    </p>
+    <br></br>
+    <div class="card">
+  <div class="card-body">
+    <h3>Negro | VS | Rojo</h3>
+    <p>Turno = Player {{ player }}</p>
+    
+  <div class="text-center md-3">    
+    <div class="row">
+      <div class="col-sm"><div class="card mb-3">
+      <img class="card-img-top" src={{ image_Tablero }} alt="Card image cap" title="Tablero", class="fotoTablero">
+      <div class="card-body">
+      <h5 class="card-title">Movimientos disponibles</h5>
+      <p class="card-text">{{ txt }}</p>
+      <p class="card-text"><small class="text-muted">Elige una opcion</small></p>
+    </div>
+  </div>
+</div>
+  </div>
+  <div>
+<br></br>
+</div>
+</div>
+      </div>
+      <form method="POST">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Movimiento</label>
+        <input type="text" name="movim" class="form-control" aria-describedby="emailHelp" placeholder="Escoja una posicion para colocar la ficha." required>
+        <small id="emailHelp" class="form-text text-muted">Fichas a mover.</small>
+      </div>
+      <button type="submit" class="btn btn-primary mb-3">Mover</button>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div>
+  <br></br>
+  <p></p>
+  </div>
+</div>
+{% endblock %}
